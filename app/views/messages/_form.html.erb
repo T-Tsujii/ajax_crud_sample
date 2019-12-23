@@ -1,0 +1,10 @@
+<!-- 新規メッセージ投稿用のフォーム -->
+<!-- Message.new を 変数 message に変更 -->
+<%= form_with model: message do |f| %>
+  <%= f.text_field :content %>
+  <!-- ボタンの文字を 変数 value に変更 -->
+  <%= f.submit value %>
+  <% if value == '更新' %>
+    <%= link_to '取消', new_message_path, data: { remote: true } %>
+  <% end %>
+<% end %>
